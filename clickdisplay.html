@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-    <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
-        <link href="../css/bootstrap.min.css?=20240325" rel="stylesheet">
-<script src="/js/bootstrap.min.js" type="text/javascript"></script>
-
-  <meta charset="UTF-8">
-  <title>Title</title>
-      <style>
-	  
-        .fdad a{color:#000;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}.fdad{top:66px;}.xgcj li{font-size:14px;line-height:20px;list-style-type:none;transition:all 1s ease 0s;border-radius:5px;}.xgcj li:hover{background-color:#e4e4e4;}.xgcj{background-color:rgba(255,255,255,.3);overflow-x:hidden;}.xgcj ul{padding:10px}.xgcj h3{line-height:30px;}.xgcj p{padding-left:20px;font-size:13px;display:none;}.xgcj span{font-family:"宋体";}.xgcj li:hover p{display:block;}
-    
-  </style>
-<script>
-(function($){$.fn.foldpanel=function(options){var _init=options.init||true,_time=options.time||300,_dbclose=options.dbclose||true,_flag=false;return this.each(function(){var $dts=$(this).children("dt");$dts.click(onClick);$dts.each(reset);if(_init){$dts.eq(0).next().slideDown(_time);$dts.eq(0).data("flag",true)}});function onClick(){_this=$(this);_this.siblings("dt").each(hide);if(_dbclose){if(_this.data("flag")){_this.next().slideUp(_time);_this.data("flag",false)}else{_this.next().slideDown(_time);_this.data("flag",true)}return false}else{_this.next().slideDown(_time)}}function hide(){$(this).next().slideUp(_time)}function reset(){_this=$(this);_this.next().hide();_this.data("flag",_flag)}}})(jQuery);
-</script>
+	<meta charset="UTF-8">
+	<title>Welcome</title>
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<link href="css/bootstrap.min.css?=20240325" rel="stylesheet">
+	<link href="css/pages.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/foldpanel.js" type="text/javascript"></script>
+	<style>
+	</style>
 </head>
 <body>
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<dl class="foldpanel" id="my-foldpanel">
+			<dt>Home</dt>
+				<dd>1</dd>
+			<dt>Function</dt>
+				<dd><a href="card-demo.html">Card demo</a></dd>
+			<dt>Templates</dt>
+				<dd>Section 3 对应的内容</dd>
+			<dt>Read Me</dt>
+				<dd>
+					<ul>
+						<li><a href="常用代码.pdf">常用代码</a></li>
+					</ul>
+				</dd>
+		</dl>
+		<script type="text/javascript">
+			$(function(){
+				$('dl#my-foldpanel').foldpanel({
+					init: false,			// 初始第一个展开, 默认为 true
+					time: 100,			// panel展开动画时间, 默认为 100ms
+					dbclose: true,		// 在此点击关闭, 默认为 true
+				});
+			})
+		</script>
+	</div>
+	<div class="col-md-2"></div>
 
-	<dl class="foldpanel" id="my-foldpanel">
-	  	<dt>Section 1</dt>
-			<dd>Section 1 对应的内容</dd>
-		<dt>Section 2</dt>
-			<dd>Section 2 对应的内容</dd>
-		<dt>Section 3</dt>
-			<dd>Section 3 对应的内容</dd>
-		<dt>Section 4</dt>
-			<dd>Section 4 对应的内容</dd>
-	</dl>
-	<script type="text/javascript">
-		$(function(){
-			$('dl#my-foldpanel').foldpanel({
-				init: false,			// 初始第一个展开, 默认为 true
-				time: 100,			// panel展开动画时间, 默认为 100ms
-				dbclose: true,		// 在此点击关闭, 默认为 true
-			});
-		})
-
-	</script>
-
+</div>
 
 
 </body>
